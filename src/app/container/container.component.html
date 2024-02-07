@@ -1,0 +1,10 @@
+<div class="set-width">
+  <app-header #header></app-header>
+  <app-main-data-card
+    [weatherData]="header.currentWeatherInfo"
+  ></app-main-data-card>
+  <app-sub-data-card
+    [weatherData]="header.currentWeatherInfo"
+  ></app-sub-data-card>
+  <app-forecast-data></app-forecast-data>
+</div>

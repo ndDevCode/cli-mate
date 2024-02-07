@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-opacity-100">
+  <div class="container-fluid d-flex p-0">
+    <a class="navbar-brand align-self-start" href="#">
+      <img
+        class="img-fluid"
+        src="assets/logo.png"
+        alt="app-logo"
+        width="50"
+        height="50"
+      />
+    </a>
+
+    <span class="navbar-brand ms-2">Cli-Mate</span>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarContent"
+      aria-controls="navbarContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <div class="d-flex m-auto w-75">
+        <div class="input-group">
+          <span
+            class="input-group-text"
+            id="txt-search"
+            (click)="getCurrentWeatherData()"
+            ><i class="bi bi-search"></i
+          ></span>
+          <input
+            id="txt-search"
+            type="text"
+            class="form-control mw-50 border-opacity-80"
+            placeholder="Search City"
+            aria-label="txt-search"
+            aria-describedby="txt-search"
+            (keydown.enter)="getCurrentWeatherData()"
+            [(ngModel)]="cityName"
+          />
+        </div>
+      </div>
+
+      <ul class="myClass navbar-nav ms-auto mb-lg-0">
+        <li class="nav-item">
+          <p class="align-self-center m-auto">{{ currentDate }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

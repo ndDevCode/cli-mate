@@ -1,0 +1,7 @@
+.myClass
+{
+    @media screen and (max-width: 990px) {
+        margin-top: 10px;
+        text-align: center;
+    }
+}
