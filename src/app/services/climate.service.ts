@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Environment} from "../environments/interface";
-import { environment } from '../environments/environment';
+import { Environment } from '../../environments/interface';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +9,7 @@ import { environment } from '../environments/environment';
 export class ClimateService {
   constructor(private http: HttpClient) {}
 
-  private keys : Environment = environment;
+  private keys: Environment = environment;
 
   private api_key_weather: string = this.keys.apiKeyWeather;
   private api_key_location: string = this.keys.apiKeyLocation;
@@ -45,5 +45,11 @@ export class ClimateService {
     const foreCast = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${this.api_key_weather}`;
 
     return this.http.get(foreCast);
+  }
+
+  getAirQualityData(lat: any, lon: any) {
+    const airQuality = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${this.api_key_weather}`;
+
+    return this.http.get(airQuality);
   }
 }

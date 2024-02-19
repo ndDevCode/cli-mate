@@ -1,14 +1,42 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { CommonModule } from '@angular/common';
+import * as Aos from 'aos';
 
 @Component({
   selector: 'app-forecast-data',
   standalone: true,
-  imports: [CanvasJSAngularChartsModule],
+  imports: [CanvasJSAngularChartsModule, CommonModule],
   templateUrl: './forecast-data.component.html',
   styleUrls: ['./forecast-data.component.css'],
 })
-export class ForecastDataComponent {
+export class ForecastDataComponent implements OnChanges, OnInit {
+  ngOnChanges(): void {
+    this.modalDataFromForecast();
+  }
+
+  ngOnInit(): void {
+    Aos.init();
+  }
+
+  @Input() forecastData: any;
+
+  private tempDataPoints: { x: any; y: number }[] = [];
+  private tempFeelsDataPoints: { x: any; y: number }[] = [];
+
+  modalDataFromForecast() {
+    this.forecastData?.list.forEach((data: any) => {
+      this.tempDataPoints.push({
+        x: new Date(data.dt * 1000),
+        y: data.main.temp,
+      });
+      this.tempFeelsDataPoints.push({
+        x: new Date(data.dt * 1000),
+        y: data.main.feels_like,
+      });
+    });
+  }
+
   chart: any;
 
   chartOptions = {
@@ -16,14 +44,17 @@ export class ForecastDataComponent {
     animationDuration: 2000,
     theme: 'light1',
     title: {
-      text: 'Forecast Weather for Next 5 Days',
+      text: 'Forecast Weather (Temperature)',
       cornerRadius: 4,
     },
     axisX: {
-      valueFormatString: 'D MMM',
+      valueFormatString: 'DD hh:mm TT',
+      intervalType: 'day',
+      interval: 1,
     },
     axisY: {
-      title: 'Number of Sales',
+      title: 'Temperature',
+      interval: 2,
     },
     toolTip: {
       shared: true,
@@ -46,47 +77,15 @@ export class ForecastDataComponent {
       {
         type: 'line',
         showInLegend: true,
-        name: 'Projected Sales',
-        xValueFormatString: 'MMM DD, YYYY',
-        dataPoints: [
-          { x: new Date(2021, 8, 1), y: 63 },
-          { x: new Date(2021, 8, 2), y: 69 },
-          { x: new Date(2021, 8, 3), y: 65 },
-          { x: new Date(2021, 8, 4), y: 70 },
-          { x: new Date(2021, 8, 5), y: 71 },
-          { x: new Date(2021, 8, 6), y: 65 },
-          { x: new Date(2021, 8, 7), y: 73 },
-          { x: new Date(2021, 8, 8), y: 86 },
-          { x: new Date(2021, 8, 9), y: 74 },
-          { x: new Date(2021, 8, 10), y: 75 },
-          { x: new Date(2021, 8, 11), y: 76 },
-          { x: new Date(2021, 8, 12), y: 84 },
-          { x: new Date(2021, 8, 13), y: 87 },
-          { x: new Date(2021, 8, 14), y: 76 },
-          { x: new Date(2021, 8, 15), y: 79 },
-        ],
+        name: 'Mean Temp',
+        xValueFormatString: 'DD hh:mm TT',
+        dataPoints: this.tempDataPoints,
       },
       {
         type: 'line',
         showInLegend: true,
-        name: 'Actual Sales',
-        dataPoints: [
-          { x: new Date(2021, 8, 1), y: 60 },
-          { x: new Date(2021, 8, 2), y: 57 },
-          { x: new Date(2021, 8, 3), y: 51 },
-          { x: new Date(2021, 8, 4), y: 56 },
-          { x: new Date(2021, 8, 5), y: 54 },
-          { x: new Date(2021, 8, 6), y: 55 },
-          { x: new Date(2021, 8, 7), y: 54 },
-          { x: new Date(2021, 8, 8), y: 69 },
-          { x: new Date(2021, 8, 9), y: 65 },
-          { x: new Date(2021, 8, 10), y: 66 },
-          { x: new Date(2021, 8, 11), y: 63 },
-          { x: new Date(2021, 8, 12), y: 67 },
-          { x: new Date(2021, 8, 13), y: 66 },
-          { x: new Date(2021, 8, 14), y: 56 },
-          { x: new Date(2021, 8, 15), y: 64 },
-        ],
+        name: 'Feels Like Temp',
+        dataPoints: this.tempFeelsDataPoints,
       },
     ],
   };

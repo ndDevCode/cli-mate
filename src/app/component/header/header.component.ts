@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ClimateService } from '../../climate.service';
+import { ClimateService } from '../../services/climate.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -14,48 +14,32 @@ export class HeaderComponent implements OnInit {
   cityName: String = '';
   currentWeatherInfo: any;
   forecastWeatherInfo: any;
-  loc_coordinates: number[] = [];
 
   constructor(private climateService: ClimateService) {}
 
   ngOnInit(): void {
-    this.climateService.getGeoLocation().subscribe((res: any) => {
+    this.climateService.getGeoLocationByIp().subscribe((res: any) => {
       this.cityName = res.city;
-      this.getData();
+      this.getDataWithName();
     });
   }
 
-  getData() {
+  getDataWithName() {
     this.climateService
-      .getLocation(this.cityName)
-      .subscribe((locationData: any) => {
-        this.loc_coordinates[0] = locationData[0].lat;
-        this.loc_coordinates[1] = locationData[0].lon;
-
-        this.climateService
-          .getCurrentWeatherData(
-            this.loc_coordinates[0],
-            this.loc_coordinates[1]
-          )
-          .subscribe((currentWeatherData) => {
-            this.currentWeatherInfo = currentWeatherData;
-            console.log(currentWeatherData);
-            this.getForecastData();
-          });
+      .getCurrentWeatherDataByCity(this.cityName)
+      .subscribe((currentWeatherData) => {
+        this.currentWeatherInfo = currentWeatherData;
+        this.getForecastData();
       });
   }
 
   getForecastData() {
-    this.climateService
-      .getForecastData(this.loc_coordinates[0], this.loc_coordinates[1])
-      .subscribe((data) => {
-        this.forecastWeatherInfo = data;
-        console.log(data);
-      });
+    this.climateService.getForecastData(this.cityName).subscribe((data) => {
+      this.forecastWeatherInfo = data;
+    });
   }
 
   getCurrentWeatherData() {
-    console.log('Weather Data');
-    this.getData();
+    this.getDataWithName();
   }
 }

@@ -6,5 +6,11 @@
   <app-sub-data-card
     [weatherData]="header.currentWeatherInfo"
   ></app-sub-data-card>
-  <app-forecast-data></app-forecast-data>
+  <app-forecast-data
+    [forecastData]="header.forecastWeatherInfo"
+  ></app-forecast-data>
+  <app-air-quality-data
+    [weatherData]="header.currentWeatherInfo"
+  ></app-air-quality-data>
+  <app-weather-map></app-weather-map>
 </div>

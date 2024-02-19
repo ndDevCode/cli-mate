@@ -1,4 +1,9 @@
-<div class="mt-5 bg-white rounded-5 p-4">
+<div
+  class="mt-5 bg-white rounded-5 p-4"
+  *ngIf="forecastData"
+  data-aos="fade-up"
+  data-aos-duration="3000"
+>
   <canvasjs-chart
     [options]="chartOptions"
     [styles]="{ width: '100%', height: '360px' }"

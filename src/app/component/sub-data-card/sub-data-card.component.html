@@ -1,27 +1,36 @@
 <div
   class="main-container d-flex flex-row flex-wrap gap-lg-4 gap-sm-4 mt-5 justify-content-center"
+  *ngIf="weatherData"
 >
-  <div class="bg-body-tertiary p-3 rounded text-center shadow info-tile">
+  <div class="bg-body-tertiary p-3 rounded text-center shadow info-tile"
+       data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"
+  >
     <p class="fw-bold">Current Temperature</p>
-    <p class="fs-2 fw-bold">12 °C</p>
-    <p class="txt-style-1 mb-0"><span>+2 °C</span> in next 4 hours</p>
+    <p class="fs-2 fw-bold">{{ weatherData?.main?.temp }} °C</p>
+    <p class="txt-style-1 mb-0">Feels like <span>{{weatherData?.main?.feels_like}} °C</span></p>
   </div>
 
-  <div class="bg-body-tertiary p-3 rounded text-center shadow info-tile">
+  <div class="bg-body-tertiary p-3 rounded text-center shadow info-tile"
+       data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000"
+  >
     <p class="fw-bold">Wind Speed</p>
-    <p class="fs-2 fw-bold">18&nbsp;km/hr</p>
-    <p class="txt-style-1 mb-0"><span>-0.5 km/hr</span> in next 4 hours</p>
+    <p class="fs-2 fw-bold">{{ weatherData?.wind?.speed }}&nbsp;m/s</p>
+    <p class="txt-style-1 mb-0"><span>{{weatherData?.wind?.deg}} deg</span> in Direction</p>
   </div>
 
-  <div class="bg-body-tertiary p-3 rounded text-center shadow info-tile">
+  <div class="bg-body-tertiary p-3 rounded text-center shadow info-tile"
+       data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1500"
+  >
     <p class="fw-bold">Humidity</p>
-    <p class="fs-2 fw-bold">60 %</p>
-    <p class="txt-style-1 mb-0"><span>+10 %</span> in next 4 hours</p>
+    <p class="fs-2 fw-bold">{{ weatherData?.main?.humidity }} %</p>
+    <p class="txt-style-1 mb-0">Weather condition <span>{{ weatherData?.weather[0]?.description }}</span></p>
   </div>
 
-  <div class="bg-body-tertiary p-3 rounded text-center shadow info-tile">
+  <div class="bg-body-tertiary p-3 rounded text-center shadow info-tile"
+       data-aos="fade-up" data-aos-duration="1000" data-aos-delay="2000"
+  >
     <p class="fw-bold">Pressure</p>
-    <p class="fs-2 fw-bold">709 mm</p>
-    <p class="txt-style-1 mb-0"><span class="">-20 mm</span> in next 4 hours</p>
+    <p class="fs-2 fw-bold">{{ weatherData?.main?.pressure }} hPa</p>
+    <p class="txt-style-1 mb-0"><span class="">{{ weatherData?.main?.grnd_level }} hPa</span> in Ground level</p>
   </div>
 </div>
