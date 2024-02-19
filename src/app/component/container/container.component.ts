@@ -5,6 +5,7 @@ import { MainDataCardComponent } from '../main-data-card/main-data-card.componen
 import { SubDataCardComponent } from '../sub-data-card/sub-data-card.component';
 import { AirQualityDataComponent } from '../air-quality-data/air-quality-data.component';
 import { WeatherMapComponent } from '../weather-map/weather-map.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-container',
@@ -16,6 +17,7 @@ import { WeatherMapComponent } from '../weather-map/weather-map.component';
     SubDataCardComponent,
     AirQualityDataComponent,
     WeatherMapComponent,
+    FooterComponent,
   ],
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.css'],
