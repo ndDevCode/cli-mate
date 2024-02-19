@@ -12,5 +12,5 @@
   <app-air-quality-data
     [weatherData]="header.currentWeatherInfo"
   ></app-air-quality-data>
-  <app-weather-map></app-weather-map>
+  <app-weather-map [weatherData]="header.currentWeatherInfo"></app-weather-map>
 </div>
