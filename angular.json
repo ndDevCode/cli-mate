@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "baseHref": "https://nddevcode.github.io/cli-mate/",
             "outputPath": "dist/cli-mate",
             "index": "src/index.html",
             "main": "src/main.ts",
