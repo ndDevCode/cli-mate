@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcli_mate=self.webpackChunkcli_mate||[]).push([[2644],{2644:(d,n,t)=>{t.r(n),t.d(n,{TriangleDrawer:()=>o});var r=t(1368);class o extends r.o{getCenter(c,e){return{x:-e,y:e/1.66}}getSidesCount(){return 3}getSidesData(c,e){return{count:{denominator:2,numerator:3},length:2*e}}}}}]);

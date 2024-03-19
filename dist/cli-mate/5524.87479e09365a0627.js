@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcli_mate=self.webpackChunkcli_mate||[]).push([[5524],{5524:(u,n,s)=>{s.r(n),s.d(n,{PolygonDrawer:()=>l});var c=s(1368);class l extends c.o{getCenter(t,e){return{x:-e/(t.sides/3.5),y:-e/.76}}getSidesData(t,e){const r=t.sides;return{count:{denominator:1,numerator:r},length:2.66*e/(r/3)}}}}}]);
