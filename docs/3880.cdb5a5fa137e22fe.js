@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcli_mate=self.webpackChunkcli_mate||[]).push([[3880],{3880:(d,n,e)=>{e.r(n),e.d(n,{loadCircleShape:()=>c});var a=e(1528);function c(t){return l.apply(this,arguments)}function l(){return(l=(0,a.c)(function*(t,s=!0){const{CircleDrawer:r}=yield e.e(2424).then(e.bind(e,2424));yield t.addShape("circle",new r,s)})).apply(this,arguments)}}}]);
