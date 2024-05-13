@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcli_mate=self.webpackChunkcli_mate||[]).push([[4064],{1684:(o,t,e)=>{e.r(t),e.d(t,{loadLineShape:()=>s});var l=e(1528);function s(a){return n.apply(this,arguments)}function n(){return(n=(0,l.c)(function*(a,d=!0){const{LineDrawer:i}=yield e.e(8904).then(e.bind(e,8904));yield a.addShape("line",new i,d)})).apply(this,arguments)}}}]);

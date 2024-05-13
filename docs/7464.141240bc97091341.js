@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcli_mate=self.webpackChunkcli_mate||[]).push([[7464],{7464:(o,a,t)=>{t.r(a),t.d(a,{drawSquare:()=>r});const d=Math.sqrt(2),i=2;function r(s){const{context:n,radius:f}=s,e=f/d,u=e*i;n.rect(-e,-e,u,u)}}}]);

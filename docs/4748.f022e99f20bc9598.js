@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcli_mate=self.webpackChunkcli_mate||[]).push([[4748],{4748:(f,n,i)=>{i.r(n),i.d(n,{drawStar:()=>r});const l=2,t={x:0,y:0};function r(d){const{context:e,particle:o,radius:a}=d,s=o.sides,u=o.starInset??l;e.moveTo(t.x,t.y-a);for(let c=0;c<s;c++)e.rotate(Math.PI/s),e.lineTo(t.x,t.y-a*u),e.rotate(Math.PI/s),e.lineTo(t.x,t.y-a)}}}]);
