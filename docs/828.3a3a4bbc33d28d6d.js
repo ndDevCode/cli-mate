@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcli_mate=self.webpackChunkcli_mate||[]).push([[828],{828:(o,e,n)=>{n.r(e),n.d(e,{drawCircle:()=>s});const r=2*Math.PI,t=0,a={x:0,y:0};function s(u){const{context:d,particle:c,radius:m}=u;c.circleRange||(c.circleRange={min:t,max:r});const i=c.circleRange;d.arc(a.x,a.y,m,i.min,i.max,!1)}}}]);
