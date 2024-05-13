@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcli_mate=self.webpackChunkcli_mate||[]).push([[3292],{3292:(r,e,i)=>{function u(c){const{context:a,particle:d,radius:l,opacity:m}=c,o=d.emojiData,t=2*l,n=a.globalAlpha;o&&(a.globalAlpha=m,a.drawImage(o,-l,-l,t,t),a.globalAlpha=n)}i.r(e),i.d(e,{drawEmoji:()=>u})}}]);

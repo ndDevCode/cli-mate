@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcli_mate=self.webpackChunkcli_mate||[]).push([[4115],{4115:(u,t,e)=>{e.r(t),e.d(t,{SquareDrawer:()=>a});var n=e(1528);class a{draw(r){return(0,n.c)(function*(){const{drawSquare:l}=yield e.e(7464).then(e.bind(e,7464));l(r)})()}getSidesCount(){return 4}}}}]);

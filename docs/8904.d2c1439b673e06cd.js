@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcli_mate=self.webpackChunkcli_mate||[]).push([[8904],{8904:(r,n,e)=>{e.r(n),e.d(n,{LineDrawer:()=>a});var t=e(1528);class a{draw(l){return(0,t.c)(function*(){const{drawLine:d}=yield e.e(8220).then(e.bind(e,8220));d(l)})()}getSidesCount(){return 1}}}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcli_mate=self.webpackChunkcli_mate||[]).push([[8220],{8220:(p,a,t)=>{function i(s){const{context:e,particle:u,radius:n}=s,l=u.shapeData;e.moveTo(-n,0),e.lineTo(n,0),e.lineCap=l?.cap??"butt"}t.r(a),t.d(a,{drawLine:()=>i})}}]);

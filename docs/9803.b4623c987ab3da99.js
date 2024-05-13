@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcli_mate=self.webpackChunkcli_mate||[]).push([[9803],{9803:(d,n,e)=>{e.r(n),e.d(n,{loadSquareShape:()=>l});var u=e(1528);function l(t){return a.apply(this,arguments)}function a(){return(a=(0,u.c)(function*(t,s=!0){const{SquareDrawer:r}=yield e.e(4115).then(e.bind(e,4115));yield t.addShape(["edge","square"],new r,s)})).apply(this,arguments)}}}]);
